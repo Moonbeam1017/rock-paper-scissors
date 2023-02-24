@@ -11,7 +11,6 @@ function getCompChoice() {
 
 
 function playRound(playerSelection, compSelection) {
-    playerSelection = prompt ('rock, paper, or scissors?');
     compSelection = getCompChoice();
         if (playerSelection === compSelection) {
             return alert('tie game! draw again')
@@ -38,3 +37,5 @@ function playRound(playerSelection, compSelection) {
             return alert('invalid selection - try again.')
         }
 }
+
+const compSelection = getCompChoice;
