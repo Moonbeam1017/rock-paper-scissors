@@ -11,31 +11,56 @@ function getCompChoice() {
 
 
 function playRound(playerSelection, compSelection) {
+    playerSelection = prompt ('rock, paper, or scissors?');
+//delete line 14 to get rid of prompt - i kind of like it tho? also is it still fully functional?
     compSelection = getCompChoice();
         if (playerSelection === compSelection) {
-            return alert('tie game! draw again')
+            console.log('tie game! draw again')
         }
         else if (playerSelection === 'rock' && compSelection === 'paper') {
-            return alert('you lose! paper beats rock!')
+            console.log('you lose! paper beats rock! Score')
         }
         else if (playerSelection === 'rock' && compSelection === 'scissors') {
-            return alert('you win! rock beats scissors!')
+            console.log('you win! rock beats scissors!')
         }
         else if (playerSelection === 'paper' && compSelection === 'rock') {
-            return alert('you win! paper beats rock!')
+            console.log('you win! paper beats rock!')
         }
         else if (playerSelection === 'paper' && compSelection === 'scissors') {
-            return alert('you lose! scissors beat paper!')
+            console.log('you lose! scissors beat paper!')
         }
         else if (playerSelection === 'scissors' && compSelection === 'paper') {
-            return alert('you win! scissors beat paper!')
+            console.log('you win! scissors beat paper!')
         }
         else if (playerSelection === 'scissors' && compSelection === 'rock') {
-            return alert('you lose! rock beats scissors!')
+            console.log('you lose! rock beats scissors!')
         }
         else {
-            return alert('invalid selection - try again.')
+            console.log('invalid selection - try again.')
         }
 }
 
 const compSelection = getCompChoice;
+
+
+
+
+function game() {
+    playRound();
+}
+
+
+for (let i = 1; i < 6; i++) {
+    // your code here!
+    game();
+    console.log(i);
+   }
+ 
+
+if (compScore == 5) {
+    alert('You lose!')
+}
+
+if (playerScore == 5) {
+    alert('You Win!')
+}
