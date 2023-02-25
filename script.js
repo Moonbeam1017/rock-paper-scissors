@@ -16,34 +16,34 @@ function playRound(playerSelection, compSelection) {
 //delete line 14 to get rid of prompt - i kind of like it tho? also is it still fully functional?
     compSelection = getCompChoice();
         if (playerSelection === compSelection) {
-            resultTie = console.log('tie game! draw again')
+            result = console.log(`tie game on round ${round}! draw again`)
         }
         else if (playerSelection === 'rock' && compSelection === 'paper') {
-            resultLoss = console.log('you lose! paper beats rock! Score: ');
-            ++compScore;
+            result = console.log(`you lose round ${round}! paper beats rock! Score: `);
+            compScore++;
         }
         else if (playerSelection === 'rock' && compSelection === 'scissors') {
-            resultWin = console.log('you win! rock beats scissors!');
-            ++playerScore
+            result = console.log(`you win round ${round}! rock beats scissors!`);
+            playerScore++
         }
         else if (playerSelection === 'paper' && compSelection === 'rock') {
-            resultWin = console.log('you win! paper beats rock!');
-            ++playerScore
+            result = console.log(`you win round ${round}! paper beats rock!`);
+            playerScore++
         }
         else if (playerSelection === 'paper' && compSelection === 'scissors') {
-            resultLoss = console.log('you lose! scissors beat paper!');
-            ++compScore
+            result = console.log(`you lose round ${round}! scissors beat paper!`);
+            compScore++
         }
         else if (playerSelection === 'scissors' && compSelection === 'paper') {
-            resultWin = console.log('you win! scissors beat paper!');
-            ++playerScore
+            result = console.log(`you win round ${round}! scissors beat paper!`);
+            playerScore++
         }
         else if (playerSelection === 'scissors' && compSelection === 'rock') {
-            resultLoss = console.log('you lose! rock beats scissors!');
-            ++compScore;
+            result = console.log(`you lose round ${round}! rock beats scissors!`);
+            compScore++;
         }
         else {
-            resultInvalid = console.log('invalid selection - try again.')
+            result = console.log('invalid selection - try again.')
         
         }
 }
@@ -56,21 +56,20 @@ const compSelection = getCompChoice;
 function game() {
     playRound();
     ++round; 
+    winCounter();
 }
 
 let playerScore = 0;
 let compScore = 0;
-let round = 0;
+let round = 1;
+
 
 function winCounter (playerScore, compScore) {
-    if (playerScore > compScore) {
-        console.log(++playScore);
-    }
-    else if (compWin === resultLoss) {
-        console.log(++compScore);
-    }
-    else {
-        console.log('invalid selection')
+    playerScore = 0;
+    compScore = 0;
+
+    if (playerScore > compScore || playerScore < compScore || playerScore == compScore) {
+        console.log(`Player: ${playerScore}   Computer: ${compScore}`)
     }
 }
 
