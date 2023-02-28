@@ -73,7 +73,7 @@ function scoreReport () {
     if (playerScore == 5 && compScore < 5) {
         console.log('Congratulations!!! You won!!!')
     }
-    if (compScore == 5 && playerScore <5) {
+    if (compScore == 5 && playerScore < 5) {
         console.log('You lost! Try again?')
     }
 }
