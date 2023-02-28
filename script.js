@@ -12,7 +12,8 @@ function getCompChoice() {
 function playRound(playerSelection, compSelection) {
 
     playerSelection = prompt ('rock, paper, or scissors?');
-//delete line 14 to get rid of prompt - i kind of like it tho? also is it still fully functional?
+    //delete line 14 to get rid of prompt and play entirely in the console by specifying parameters within function call
+    //i kind of like it tho? 
     compSelection = getCompChoice();
         if (playerSelection === compSelection) {
             result = console.log(`Tie game on round ${round}!  Draw again`)
@@ -61,7 +62,6 @@ let compScore = 0;
 let round = 1;
 
 
-
 while(playerScore < 5 && compScore < 5) {
     // your code here!
     game();
@@ -81,5 +81,4 @@ function scoreReport () {
    //add equalsIgnoreCase() to strings to make lowercase, UPPERCASE, and mIxEd entries work.
    //game now goes until someone wins 5 rounds
    //code in a start game function 
-   //code in a win/loss prompt once someone reaches 5 points
    //code in a new game option 
