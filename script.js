@@ -18,7 +18,7 @@ function playRound(playerSelection, compSelection) {
             result = console.log(`tie game on round ${round}! draw again`)
         }
         else if (playerSelection === 'rock' && compSelection === 'paper') {
-            result = console.log(`you lose round ${round}! paper beats rock! Score: `);
+            result = console.log(`you lose round ${round}! paper beats rock!`);
             compScore++;
         }
         else if (playerSelection === 'rock' && compSelection === 'scissors') {
