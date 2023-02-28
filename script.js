@@ -66,6 +66,20 @@ while(playerScore < 5 && compScore < 5) {
     // your code here!
     game();
     console.log(`Player: ${playerScore}   Computer: ${compScore}`);
+    scoreReport();
    }
 
+function scoreReport () {
+    if (playerScore == 5 && compScore < 5) {
+        console.log('Congratulations! You won!')
+    }
+    if (compScore == 5 && playerScore <5) {
+        console.log('You lost! Try again?')
+    }
+}
+
+   //add equalsIgnoreCase() to strings to make lowercase, UPPERCASE, and mIxEd entries work.
    //game now goes until someone wins 5 rounds
+   //code in a start game function 
+   //code in a win/loss prompt once someone reaches 5 points
+   //code in a new game option 
