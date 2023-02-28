@@ -16,7 +16,7 @@ function playRound(playerSelection, compSelection) {
     //i kind of like it tho? 
     compSelection = getCompChoice();
         if (playerSelection === compSelection) {
-            result = console.log(`Tie game on round ${round}!  Draw again`)
+            result = console.log(`Tie game on round ${round}!  Draw again.`)
         }
         else if (playerSelection === 'rock' && compSelection === 'paper') {
             result = console.log(`You lose round ${round}!  Paper beats rock!`);
