@@ -9,7 +9,6 @@ function getCompChoice() {
         else {return 'scissors'}
 }
 
-
 function playRound(playerSelection, compSelection) {
 
     playerSelection = prompt ('rock, paper, or scissors?');
@@ -24,19 +23,19 @@ function playRound(playerSelection, compSelection) {
         }
         else if (playerSelection === 'rock' && compSelection === 'scissors') {
             result = console.log(`you win round ${round}! rock beats scissors!`);
-            playerScore++
+            playerScore++;
         }
         else if (playerSelection === 'paper' && compSelection === 'rock') {
             result = console.log(`you win round ${round}! paper beats rock!`);
-            playerScore++
+            playerScore++;
         }
         else if (playerSelection === 'paper' && compSelection === 'scissors') {
             result = console.log(`you lose round ${round}! scissors beat paper!`);
-            compScore++
+            compScore++;
         }
         else if (playerSelection === 'scissors' && compSelection === 'paper') {
             result = console.log(`you win round ${round}! scissors beat paper!`);
-            playerScore++
+            playerScore++;
         }
         else if (playerSelection === 'scissors' && compSelection === 'rock') {
             result = console.log(`you lose round ${round}! rock beats scissors!`);
@@ -52,30 +51,21 @@ const compSelection = getCompChoice;
 
 
 
-
 function game() {
     playRound();
     ++round; 
-    winCounter();
 }
 
-let playerScore = 0;
+let playerScore =0;
 let compScore = 0;
 let round = 1;
 
 
-function winCounter (playerScore, compScore) {
-    playerScore = 0;
-    compScore = 0;
 
-    if (playerScore > compScore || playerScore < compScore || playerScore == compScore) {
-        console.log(`Player: ${playerScore}   Computer: ${compScore}`)
-    }
-}
-
-
-for (let i = 1; i < 6; i++) {
+while(playerScore < 5 && compScore < 5) {
     // your code here!
     game();
-    console.log(i);
+    console.log(`Player: ${playerScore}   Computer: ${compScore}`);
    }
+
+   //game now goes until someone wins 5 rounds
