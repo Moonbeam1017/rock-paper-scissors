@@ -10,10 +10,8 @@ function getCompChoice() {
 }
 
 function playRound(playerSelection, compSelection) {
-
     playerSelection = prompt ('rock, paper, or scissors?');
     //delete line 14 to get rid of prompt and play entirely in the console by specifying parameters within function call
-    //i kind of like it tho? 
     compSelection = getCompChoice();
         if (playerSelection === compSelection) {
             result = console.log(`Tie game on round ${round}!  Draw again.`)
@@ -51,7 +49,6 @@ function playRound(playerSelection, compSelection) {
 const compSelection = getCompChoice;
 
 
-
 function game() {
     playRound();
     ++round; 
@@ -63,7 +60,6 @@ let round = 1;
 
 
 while(playerScore < 5 && compScore < 5) {
-    // your code here!
     game();
     console.log(`Player: ${playerScore}   Computer: ${compScore}`);
     scoreReport();
@@ -82,3 +78,4 @@ function scoreReport () {
    //game now goes until someone wins 5 rounds
    //code in a start game function 
    //code in a new game option 
+   //code in a line that cancels the game when player clicks cancel
