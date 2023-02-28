@@ -15,34 +15,34 @@ function playRound(playerSelection, compSelection) {
 //delete line 14 to get rid of prompt - i kind of like it tho? also is it still fully functional?
     compSelection = getCompChoice();
         if (playerSelection === compSelection) {
-            result = console.log(`tie game on round ${round}! draw again`)
+            result = console.log(`Tie game on round ${round}!  Draw again`)
         }
         else if (playerSelection === 'rock' && compSelection === 'paper') {
-            result = console.log(`you lose round ${round}! paper beats rock!`);
+            result = console.log(`You lose round ${round}!  Paper beats rock!`);
             compScore++;
         }
         else if (playerSelection === 'rock' && compSelection === 'scissors') {
-            result = console.log(`you win round ${round}! rock beats scissors!`);
+            result = console.log(`You win round ${round}!  Rock beats scissors!`);
             playerScore++;
         }
         else if (playerSelection === 'paper' && compSelection === 'rock') {
-            result = console.log(`you win round ${round}! paper beats rock!`);
+            result = console.log(`You win round ${round}!  Paper beats rock!`);
             playerScore++;
         }
         else if (playerSelection === 'paper' && compSelection === 'scissors') {
-            result = console.log(`you lose round ${round}! scissors beat paper!`);
+            result = console.log(`You lose round ${round}!  Scissors beat paper!`);
             compScore++;
         }
         else if (playerSelection === 'scissors' && compSelection === 'paper') {
-            result = console.log(`you win round ${round}! scissors beat paper!`);
+            result = console.log(`You win round ${round}!  Scissors beat paper!`);
             playerScore++;
         }
         else if (playerSelection === 'scissors' && compSelection === 'rock') {
-            result = console.log(`you lose round ${round}! rock beats scissors!`);
+            result = console.log(`You lose round ${round}!  Rock beats scissors!`);
             compScore++;
         }
         else {
-            result = console.log('invalid selection - try again.')
+            result = console.log('Invalid selection - Try again.')
         
         }
 }
@@ -71,7 +71,7 @@ while(playerScore < 5 && compScore < 5) {
 
 function scoreReport () {
     if (playerScore == 5 && compScore < 5) {
-        console.log('Congratulations! You won!')
+        console.log('Congratulations!!! You won!!!')
     }
     if (compScore == 5 && playerScore <5) {
         console.log('You lost! Try again?')
