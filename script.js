@@ -58,12 +58,13 @@ let playerScore =0;
 let compScore = 0;
 let round = 1;
 
-
 while(playerScore < 5 && compScore < 5) {
     game();
     console.log(`Player: ${playerScore}   Computer: ${compScore}`);
     scoreReport();
-   }
+   }  
+
+   //test comit
 
 function scoreReport () {
     if (playerScore == 5 && compScore < 5) {
