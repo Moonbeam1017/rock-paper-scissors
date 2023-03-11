@@ -65,6 +65,8 @@ buttons.forEach((button) => {
         scoreOutput.textContent = `Player: ${playerScore}   Computer: ${compScore}`;
           scoreReport();
           round++;
+          if (playerScore === 5 && compScore === 5) {
+        };
     });
 });
 
@@ -75,7 +77,7 @@ function scoreUpdate () {
 function scoreReport () {
     if (playerScore == 5 && compScore < 5) {
         finalScore.textContent = `Congratulations!!! You won!!!`;
-            playerScore = 0;
+            playerScore = 0; //are these necessary or are the global variables covering it
             compScore = 0;
             round = 0;
     }
