@@ -16,34 +16,38 @@ function playRound(playerChoice, compSelection) {
 //should these parameter names match the ones in the event listener
     compSelection = getCompChoice();  //does this need to be here? why or why not? my answer would be no becasue the parameters get filled in when a selection is made
         if (playerChoice === compSelection) {
-            result = console.log(`Tie game on round ${round}!  Draw again.`) //need to change console.logs to DOM methods
+            textOutput.textContent = `Tie game on round ${round}!  Draw again.`; //how do i make scoreReport show up underneath this
+                                                                                    //use the same format as textOutput.textContent except make
+                                                                                    //another one to display scoreReport and scoreUpdate
+                                                                                     //replace the corresponding console.logs with the div tags from the HTML
+            
         }
         else if (playerChoice === 'rock' && compSelection === 'paper') {
-            result = console.log(`You lose round ${round}!  Paper beats rock!`);
+            textOutput.textContent = `You lose round ${round}!  Paper beats rock!`;
             compScore++;
         }
         else if (playerChoice === 'rock' && compSelection === 'scissors') {
-            result = console.log(`You win round ${round}!  Rock beats scissors!`);
+            textOutput.textContent = `You win round ${round}!  Rock beats scissors!`;
             playerScore++;
         }
         else if (playerChoice === 'paper' && compSelection === 'rock') {
-            result = console.log(`You win round ${round}!  Paper beats rock!`);
+            textOutput.textContent = `You win round ${round}!  Paper beats rock!`;
             playerScore++;
         }
         else if (playerChoice === 'paper' && compSelection === 'scissors') {
-            result = console.log(`You lose round ${round}!  Scissors beat paper!`);
+            textOutput.textContent = `You lose round ${round}!  Scissors beat paper!`;
             compScore++;
         }
         else if (playerChoice === 'scissors' && compSelection === 'paper') {
-            result = console.log(`You win round ${round}!  Scissors beat paper!`);
+            textOutput.textContent = `You win round ${round}!  Scissors beat paper!`;
             playerScore++;
         }
         else if (playerChoice === 'scissors' && compSelection === 'rock') {
-            result = console.log(`You lose round ${round}!  Rock beats scissors!`);
+            textOutput.textContent = `You lose round ${round}!  Rock beats scissors!`;
             compScore++;
         }
         else {
-            result = console.log('Invalid selection - Try again.')
+            textOutput.textContent = 'Invalid selection - Try again.'
         
         }
 }
@@ -58,40 +62,41 @@ buttons.forEach((button) => {
         const playerChoice = button.id;
         const computerChoice = getCompChoice();
         playRound(playerChoice, computerChoice);  // should these parameters be the same as the ones in the playRound function above?
-        console.log(`Player: ${playerScore}   Computer: ${compScore}`);
+        scoreOutput.textContent = `Player: ${playerScore}   Computer: ${compScore}`;
           scoreReport();
           round++;
     });
 });
 
+function scoreUpdate () {
+
+}
+
 function scoreReport () {
     if (playerScore == 5 && compScore < 5) {
-        console.log('Congratulations!!! You won!!!')
+        finalScore.textContent = `Congratulations!!! You won!!!`;
             playerScore = 0;
             compScore = 0;
             round = 0;
     }
     if (compScore == 5 && playerScore < 5) {
-        console.log('You lost! Try again?')
+        finalScore.textContent = `You lost! Try again?`;
             playerScore = 0;
             compScore = 0;
             round = 0;
     }
 };
 
+
+const textOutput = document.querySelector('#text-content')
+const scoreOutput = document.querySelector('#score-update')
+const finalScore = document.querySelector('#score-report') //should all instances of query selectors be grouped together for readability?
+
+
 let playerScore =0;
 let compScore = 0;
-let round = 1;
+let round = 1;  //should all global constants be grouped together for readability?
 
-
-
+    //need to end the game once someone wins and add a play again option - not sure how to do this
     //why is my while loop not working here anymore.. it is infinitely looping/crashing the browser
-    //how to end the game when someone hits a score of 5 - i basiclally did this, right?
-
-
-   //old notes:
-   //add equalsIgnoreCase() to strings to make lowercase, UPPERCASE, and mIxEd entries work.
-   //game now goes until someone wins 5 rounds
-   //code in a start game function 
-   //code in a new game option 
-   //code in a line that cancels the game when player clicks cancel
+    //need to understand callbacks
