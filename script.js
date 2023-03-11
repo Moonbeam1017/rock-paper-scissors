@@ -57,7 +57,7 @@ const compSelection = getCompChoice; // does this need to be here? why or why no
 
 const buttons = document.querySelectorAll(`button`);
 
-buttons.forEach((button) => {
+buttons.forEach((button) => { //this function was critical - understanding this syntax was crucial
     button.addEventListener('click', () => {
         const playerChoice = button.id;
         const computerChoice = getCompChoice();
@@ -65,8 +65,6 @@ buttons.forEach((button) => {
         scoreOutput.textContent = `Player: ${playerScore}   Computer: ${compScore}`;
           scoreReport();
           round++;
-          if (playerScore === 5 && compScore === 5) {
-        };
     });
 });
 
@@ -99,7 +97,6 @@ let playerScore =0;
 let compScore = 0;
 let round = 1;  //should all global constants be grouped together for readability?
 
-    //win loss msg only works for loss 
     //need to end the game once someone wins and add a play again option - not sure how to do this
     //why is my while loop not working here anymore.. it is infinitely looping/crashing the browser
-    //need to understand callbacks
+    //need to understand callbacks**
