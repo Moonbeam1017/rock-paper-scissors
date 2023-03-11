@@ -23,27 +23,27 @@ function playRound(playerChoice, compSelection) {
             
         }
         else if (playerChoice === 'rock' && compSelection === 'paper') {
-            textOutput.textContent = `You lose round ${round}!  Paper beats rock!`;
+            textOutput.textContent = `You lost round ${round}!  Paper beats rock!`;
             compScore++;
         }
         else if (playerChoice === 'rock' && compSelection === 'scissors') {
-            textOutput.textContent = `You win round ${round}!  Rock beats scissors!`;
+            textOutput.textContent = `You won round ${round}!  Rock beats scissors!`;
             playerScore++;
         }
         else if (playerChoice === 'paper' && compSelection === 'rock') {
-            textOutput.textContent = `You win round ${round}!  Paper beats rock!`;
+            textOutput.textContent = `You won round ${round}!  Paper beats rock!`;
             playerScore++;
         }
         else if (playerChoice === 'paper' && compSelection === 'scissors') {
-            textOutput.textContent = `You lose round ${round}!  Scissors beat paper!`;
+            textOutput.textContent = `You lost round ${round}!  Scissors beat paper!`;
             compScore++;
         }
         else if (playerChoice === 'scissors' && compSelection === 'paper') {
-            textOutput.textContent = `You win round ${round}!  Scissors beat paper!`;
+            textOutput.textContent = `You won round ${round}!  Scissors beat paper!`;
             playerScore++;
         }
         else if (playerChoice === 'scissors' && compSelection === 'rock') {
-            textOutput.textContent = `You lose round ${round}!  Rock beats scissors!`;
+            textOutput.textContent = `You lost round ${round}!  Rock beats scissors!`;
             compScore++;
         }
         else {
@@ -70,22 +70,22 @@ buttons.forEach((button) => {
     });
 });
 
-function scoreUpdate () {
-
-}
-
 function scoreReport () {
     if (playerScore == 5 && compScore < 5) {
         finalScore.textContent = `Congratulations!!! You won!!!`;
-            playerScore = 0; //are these necessary or are the global variables covering it
+            playerScore = 0;
             compScore = 0;
             round = 0;
     }
-    if (compScore == 5 && playerScore < 5) {
+    else if (compScore == 5 && playerScore < 5) {
         finalScore.textContent = `You lost! Try again?`;
             playerScore = 0;
             compScore = 0;
             round = 0;
+    }
+    else {
+        finalScore.textContent = ``; //why does this only work for a loss??
+                                     // should i make 2 seperate functions? that sounds redundant
     }
 };
 
@@ -99,6 +99,7 @@ let playerScore =0;
 let compScore = 0;
 let round = 1;  //should all global constants be grouped together for readability?
 
+    //win loss msg only works for loss 
     //need to end the game once someone wins and add a play again option - not sure how to do this
     //why is my while loop not working here anymore.. it is infinitely looping/crashing the browser
     //need to understand callbacks
