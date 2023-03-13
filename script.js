@@ -50,7 +50,7 @@ function playRound(playerChoice, compSelection) {
 }
 
 
-const buttons = document.querySelectorAll(`button`);
+const buttons = document.querySelectorAll('button');
                               //this sets a click event listener that gets the button id of the clicked and sets it as a parameter for the playround function 
                               //it also gets the comp choice for the other parameter, it then plays a round, reports the score, checks if the game has been won, and increments the round if not.
 buttons.forEach((button) => { //this function was critical - understanding this syntax was crucial
