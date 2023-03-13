@@ -11,15 +11,12 @@ function getCompChoice() {
 //generates random computer choice of either 'rock', 'paper', or 'scissors' 
 
 
-
 function playRound(playerChoice, compSelection) {
-//should these parameter names match the ones in the event listener
-    compSelection = getCompChoice();  //does this need to be here? why or why not? my answer would be no becasue the parameters get filled in when a selection is made
         if (playerChoice === compSelection) {
-            textOutput.textContent = `Tie game on round ${round}!  Draw again.`; //how do i make scoreReport show up underneath this
+            textOutput.textContent = `Tie game on round ${round}!  Draw again.`;    //how do i make scoreReport show up underneath this
                                                                                     //use the same format as textOutput.textContent except make
                                                                                     //another one to display scoreReport and scoreUpdate
-                                                                                     //replace the corresponding console.logs with the div tags from the HTML
+                                                                                    //replace the corresponding console.logs with the div tags from the HTML
             
         }
         else if (playerChoice === 'rock' && compSelection === 'paper') {
@@ -52,16 +49,15 @@ function playRound(playerChoice, compSelection) {
         }
 }
 
-const compSelection = getCompChoice; // does this need to be here? why or why not? same reasoning as above - think not
-
 
 const buttons = document.querySelectorAll(`button`);
-
+                              //this sets a click event listener that gets the button id of the clicked and sets it as a parameter for the playround function 
+                              //it also gets the comp choice for the other parameter, it then plays a round, reports the score, checks if the game has been won, and increments the round if not.
 buttons.forEach((button) => { //this function was critical - understanding this syntax was crucial
     button.addEventListener('click', () => {
         const playerChoice = button.id;
-        const computerChoice = getCompChoice();
-        playRound(playerChoice, computerChoice);  // should these parameters be the same as the ones in the playRound function above?
+        const compSelection = getCompChoice();
+        playRound(playerChoice, compSelection);
         scoreOutput.textContent = `Player: ${playerScore}   Computer: ${compScore}`;
           scoreReport();
           round++;
