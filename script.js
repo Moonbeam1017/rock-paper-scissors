@@ -78,8 +78,7 @@ function scoreReport () {
             round = 0;
     }
     else {
-        finalScore.textContent = ``; //why does this only work for a loss??
-                                     // should i make 2 seperate functions? that sounds redundant
+        finalScore.textContent = ``; 
     }
 };
 
